@@ -4,111 +4,149 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Будешь моей валентинкой?</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: #ffdde1;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
+      background: radial-gradient(circle at center, #1a1a1a, #000);
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
 
     h1 {
-      font-size: 40px;
+      font-size: 42px;
       margin-bottom: 40px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 15px #ff2e63;
     }
 
     .buttons {
-      position: relative;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     button {
-      padding: 15px 30px;
+      padding: 15px 35px;
       font-size: 20px;
-      border: none;
-      border-radius: 10px;
+      border: 2px solid white;
+      background: transparent;
+      color: white;
+      border-radius: 12px;
       cursor: pointer;
-      transition: 0.2s ease;
-      margin: 10px;
+      transition: all 0.3s ease;
     }
 
     #yes {
-      background: #ff4d6d;
-      color: white;
+      border-color: #ff2e63;
+      color: #ff2e63;
+    }
+
+    #yes:hover {
+      background: #ff2e63;
+      color: black;
+      box-shadow: 0 0 20px #ff2e63;
     }
 
     #no {
-      background: #ccc;
+      border-color: gray;
+      color: gray;
     }
 
+    #no:hover {
+      background: gray;
+      color: black;
+    }
+
+    /* 📱 мобильная версия */
     @media (max-width: 600px) {
+      h1 {
+        font-size: 30px;
+        margin-bottom: 25px;
+      }
 
-  h1 {
-    font-size: 28px;
-    margin-bottom: 25px;
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  button {
-    font-size: 22px;
-    padding: 18px 40px;
-    width: 80%;
-    max-width: 300px;
-  }
-
-}
+      button {
+        font-size: 22px;
+        padding: 18px 40px;
+        width: 80%;
+        max-width: 300px;
+      }
+    }
 
   </style>
 </head>
 <body>
 
-<h1>Ты будешь моей валентинкой? 💖</h1>
+  <h1>дарига ты будешь моей валентинкой? 🤍</h1>
 
-<div class="buttons">
-  <button id="yes">Да</button>
-  <button id="no">Нет</button>
-</div>
+  <div class="buttons">
+    <button id="yes">ДА!!</button>
+    <button id="no">нэт</button>
+  </div>
 
-<script>
-  const yesBtn = document.getElementById("yes");
-  const noBtn = document.getElementById("no");
+  <script>
+    const yesBtn = document.getElementById("yes");
+    const noBtn = document.getElementById("no");
 
-  let yesSize = 1;
-  let noTexts = [
-    "Ты уверена? 🥺",
-    "Подумай ещё...",
-    "Не торопись...",
-    "Может всё-таки да?",
-    "Ну пожалуйста 😭"
-  ];
+    let yesSize = 1;
+    let noTexts = [
+      "ты уверена ? 😐",
+      "подумай еще..",
+      "не торопись...",
+      "может все таки да",
+      "ДАРИГА 😭",
+      "хватит я реально",
+      "ПОЖАЛУЙСТА"
+    ];
 
-  let clickCount = 0;
+    let clickCount = 0;
 
-  noBtn.addEventListener("click", () => {
-    yesSize += 0.5;
-    yesBtn.style.transform = `scale(${yesSize})`;
+    noBtn.addEventListener("click", () => {
+      yesSize += 0.3;
+      yesBtn.style.transform = `scale(${yesSize})`;
 
-    if (clickCount < noTexts.length) {
-      noBtn.textContent = noTexts[clickCount];
-    }
+      if (clickCount < noTexts.length) {
+        noBtn.textContent = noTexts[clickCount];
+      }
 
-    clickCount++;
+      clickCount++;
 
-    if (yesSize > 5) {
-      noBtn.style.display = "none";
-    }
-  });
+      if (yesSize > 4) {
+        noBtn.style.display = "none";
+      }
+    });
 
-  yesBtn.addEventListener("click", () => {
-    window.location.href = "success.html";
-  });
-</script>
+    yesBtn.addEventListener("click", () => {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          height:100vh;
+          flex-direction:column;
+          text-align:center;
+          background:black;
+          color:#ff2e63;
+          font-size:40px;
+        ">
+          <div style="text-shadow:0 0 20px #ff2e63;">
+            🎉 Урааа! Теперь ты моя валентинка 🖤
+          </div>
+        </div>
+      `;
+    });
+
+  </script>
 
 </body>
 </html>
-
