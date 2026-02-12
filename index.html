@@ -116,24 +116,12 @@ button {
       }
     });
 
-    yesBtn.addEventListener("click", () => {
-      document.body.innerHTML = `
-        <div style="
-          display:flex;
-          justify-content:center;
-          align-items:center;
-          height:100vh;
-          flex-direction:column;
-          font-size:32px;
-        ">
-          🤍 теперь ты официально  
-          <br><br>
-          моя валентинка
-        </div>
-      `;
-    });
+yesBtn.addEventListener("click", () => {
+  window.location.href = "success.html";
+});
   </script>
 
 </body>
 </html>
+
 
