@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Будешь моей валентинкой?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #ffdde1;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      position: relative;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      margin: 10px;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ты будешь моей валентинкой? 💖</h1>
+
+<div class="buttons">
+  <button id="yes">Да</button>
+  <button id="no">Нет</button>
+</div>
+
+<script>
+  const yesBtn = document.getElementById("yes");
+  const noBtn = document.getElementById("no");
+
+  let yesSize = 1;
+  let noTexts = [
+    "Ты уверена? 🥺",
+    "Подумай ещё...",
+    "Не торопись...",
+    "Может всё-таки да?",
+    "Ну пожалуйста 😭"
+  ];
+
+  let clickCount = 0;
+
+  noBtn.addEventListener("click", () => {
+    yesSize += 0.5;
+    yesBtn.style.transform = `scale(${yesSize})`;
+
+    if (clickCount < noTexts.length) {
+      noBtn.textContent = noTexts[clickCount];
+    }
+
+    clickCount++;
+
+    if (yesSize > 5) {
+      noBtn.style.display = "none";
+    }
+  });
+
+  yesBtn.addEventListener("click", () => {
+    window.location.href = "success.html";
+  });
+</script>
+
+</body>
+</html>
