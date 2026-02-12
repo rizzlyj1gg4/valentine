@@ -61,6 +61,11 @@
 </head>
 <body>
 
+<audio id="bgMusic" loop>
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+  
   <div class="heart">🤍</div>
 
   <div class="container">
@@ -72,6 +77,16 @@
     </p>
   </div>
 
+<script>
+  const music = document.getElementById("bgMusic");
+
+  if (localStorage.getItem("playMusic") === "yes") {
+    music.play();
+    localStorage.removeItem("playMusic");
+  }
+</script>
+  
 </body>
 </html>
+
 
