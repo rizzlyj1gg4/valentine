@@ -6,71 +6,73 @@
   <title>Будешь моей валентинкой?</title>
 
   <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #000;
-      text-align: center;
-      padding: 20px;
-    }
+   body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2; /* не белый, мягкий серый */
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #111;
+  text-align: center;
+  padding: 20px;
+}
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 35px;
-      font-weight: 500;
-    }
+h1 {
+  font-size: 34px;
+  margin-bottom: 18px; /* уменьшили расстояние */
+  font-weight: 500;
+}
 
-    .buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-    button {
-      padding: 14px 32px;
-      font-size: 18px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.25s ease;
-      border: none;
-    }
+button {
+  padding: 20px 44px; /* увеличили кнопки */
+  font-size: 22px;   /* больше текст */
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  border: none;
+}
 
-    #yes {
-      background: #e10600;
-      color: white;
-    }
+#yes {
+  background: #e10600;
+  color: white;
+}
 
-    #yes:hover {
-      transform: scale(1.05);
-    }
+#yes:hover {
+  transform: scale(1.06);
+}
 
-    #no {
-      background: #e0e0e0;
-      color: #333;
-    }
+#no {
+  background: #d6d6d6;
+  color: #333;
+}
 
-    #no:hover {
-      background: #d5d5d5;
-    }
+#no:hover {
+  background: #cfcfcf;
+}
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 26px;
-      }
+/* 📱 телефон */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
 
-      button {
-        font-size: 20px;
-        width: 80%;
-        max-width: 280px;
-      }
-    }
+  button {
+    font-size: 24px;
+    width: 85%;
+    max-width: 320px;
+  }
+}
   </style>
 </head>
 <body>
@@ -134,3 +136,4 @@
 
 </body>
 </html>
+
